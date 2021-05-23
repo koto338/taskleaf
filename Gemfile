@@ -53,3 +53,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'slim-rails'
 # ERBを変換
 gem 'html2slim'
+
+gem 'bootstrap'
