@@ -13,7 +13,8 @@ html
     ul.navbar-nav.ml-auto 
       -if current_user 
         li.nav-ltem= link_to 'タスク一覧', tasks_path, class: 'nav-link'
-        li.nav-ltem= link_to 'ユーザー一覧', admin_users_path, class: 'nav-link'
+        - if current_user.admin?
+          li.nav-ltem= link_to 'ユーザー一覧', admin_users_path, class: 'nav-link'
         li.nav-ltem= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link'
       -else
         li.nav-ltem= link_to 'ログイン', login_path, class: 'nav-link'
