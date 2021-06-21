@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 
-gem 'rails',        '5.1.6'
+gem 'rails',        '5.2.5'
 gem 'bcrypt',       '3.1.12'
 # gem 'bootstrap-sass', '3.3.7'
 gem 'puma',         '3.9.1'
@@ -17,9 +17,17 @@ gem 'jquery-rails', '4.3.1'
 gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.7.0'
 
+
 group :development, :test do
   gem 'sqlite3', '1.3.13'
   gem 'byebug',  '9.0.6', platform: :mri
+  gem 'rspec-rails', '~> 3.7'
+  gem 'factory_bot_rails', '~> 4.11'
+  # Adds support for Capybara system testing and selenium driver'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  # gem 'chromedriver-helper'
+  gem 'webdrivers', '~> 3.0'
 end
 
 group :development do
