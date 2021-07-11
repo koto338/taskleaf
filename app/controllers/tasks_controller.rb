@@ -4,8 +4,25 @@ class TasksController < ApplicationController
   def index
     @q = current_user.tasks.ransack(params[:q])
     @tasks = @q.result(distinct: true).recent
+    
+    # format.htmlはhtmlでアクセスされた場合、format.csvはCSVとしてアクセスされた場合にそれぞれ実行される
+    respond_to do |format|
+      # HTMLフォーマットは何も処理をしない。デフォルトのslimが表示される
+      format.html
+      # send_dateを使ってレスポンスを送り出し、送り出したデータをブラウザからファイルとしてダウンロードできるようにする
+      # レスポンスの内容はTask.generate_csvが生成するCSVデータとする
+      # ファイル名は、ダウンロードするたび異なるように、現在時刻を使って作成
+      format.csv { send_data @tasks.generate_csv, filename: "tasks-#{Time.zone.now.strftime('%Y%m%d%S')}.csv" }
+    end
   end
 
+  # 画面上のフィールドからアップロードされたファイルオブジェクトを引数に呼び出す
+    # ファイルの内容を、ログインしているユーザーのタスク群として登録する
+    def import
+      current_user.tasks.import(params[:file])
+      redirect_to tasks_url, notice: "タスクを追加しました"
+    end
+    
   def show 
   end
 
