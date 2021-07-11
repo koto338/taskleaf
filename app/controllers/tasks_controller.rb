@@ -3,7 +3,7 @@ class TasksController < ApplicationController
 
   def index
     @q = current_user.tasks.ransack(params[:q])
-    @tasks = @q.result(distinct: true).recent
+    @tasks = @q.result(distinct: true).page(params[:page]).per(10)
     
     # format.htmlはhtmlでアクセスされた場合、format.csvはCSVとしてアクセスされた場合にそれぞれ実行される
     respond_to do |format|

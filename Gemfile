@@ -55,3 +55,5 @@ gem 'bootstrap'
 gem 'rails_autolink'
 
 gem 'ransack'
+
+gem 'kaminari'
