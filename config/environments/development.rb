@@ -55,7 +55,10 @@ Rails.application.configure do
   # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   # 1日ごとにログをとる
-  config.logger = Logger.new('log/development.log', 'daily') 
+  # config.logger = Logger.new('log/development.log', 'daily') 
   # 週ごと
-  config.custom_logger = Logger.new('log/custom.log', 'weekly')
+  # config.custom_logger = Logger.new('log/custom.log', 'weekly')
+
+  # Store uploaded files on the local file system (see config/storage.yml for options)
+  config.active_storage.service = :local
 end
