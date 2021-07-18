@@ -139,6 +139,8 @@ GEM
     rack (2.2.3)
     rack-protection (2.1.0)
       rack
+    rack-proxy (0.7.0)
+      rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.2.5)
@@ -220,6 +222,7 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    semantic_range (3.0.0)
     sidekiq (5.2.9)
       connection_pool (~> 2.2, >= 2.2.2)
       rack (~> 2.0)
@@ -268,6 +271,11 @@ GEM
       nokogiri (~> 1.6)
       rubyzip (~> 1.0)
       selenium-webdriver (~> 3.0)
+    webpacker (5.4.0)
+      activesupport (>= 5.2)
+      rack-proxy (>= 0.6.1)
+      railties (>= 5.2)
+      semantic_range (>= 2.3.0)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -308,6 +316,7 @@ DEPENDENCIES
   uglifier (= 3.2.0)
   web-console (= 3.5.1)
   webdrivers (~> 3.0)
+  webpacker
 
 BUNDLED WITH
    2.2.20
