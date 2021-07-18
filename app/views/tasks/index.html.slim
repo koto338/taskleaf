@@ -26,7 +26,8 @@ table.table.table-hover
       th
     tbody 
       - @tasks.each do |task|
-        tr 
+        / タスクのidを渡しておく、HTMLのid属性に、タスクのidを含む文字列を指定「task-13」など
+        tr id = "task-#{task.id}"
           td= link_to task.name, task 
           td= task.created_at
           td
