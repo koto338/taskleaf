@@ -1,24 +1,13 @@
-# README
+# Ruby on Rails 5 速習実践ガイド
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+タスク管理のためのアプリケーション
 
-Things you may want to cover:
+* 一覧表示機能・・・すべてのタスクの概要(名称と登録日時)を確認できる一覧画面を表示
 
-* Ruby version
+* 詳細表示機能・・・ある1つのタスクの全内容(ID、名称、詳しい説明、登録日時、更新日時)を確認できる詳細画面を表示
 
-* System dependencies
+* 新規登録機能・・・新しいタスクのデータをフォーム画面で入力し、データベースに登録
 
-* Configuration
+* 編集機能・・・・・登録済みのタスクのデータをフォーム画面で修正し、データベースを更新する
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* 削除機能・・・・・登録済みのタスクをデータベースから削除
